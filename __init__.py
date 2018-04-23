@@ -1,5 +1,10 @@
 import numpy
 
+"""
+This function computes the prediction matrix using technique Matrix factorization. Since we cannot use this method directly on implicit datasets, the confidence/preference framework is implimented. For more information about how the method works refer the link below:
+
+https://ieeexplore.ieee.org/document/4781121/
+"""
 def collaborativeFilteringOnImplicitDataset(utility_matrix,number_of_factors=2,learning_rate = 0.01,regularization=0.01,number_of_iterations=10,confidence_value = 20):
     users, pods = utility_matrix.shape
 	
@@ -8,7 +13,9 @@ def collaborativeFilteringOnImplicitDataset(utility_matrix,number_of_factors=2,l
     ita=learning_rate            				#learning rate
 	
     beta=regularization          				#regularization constant
+	
     epoch=number_of_iterations           		#number of iterations
+	
     alpha = confidence_value         			#value in confidence equation
 
     # Initialize latent factor matrice
@@ -49,9 +56,11 @@ def collaborativeFilteringOnImplicitDataset(utility_matrix,number_of_factors=2,l
         cost_per_iteration.append((k,error))
     
     prediction = numpy.dot(P,Q.T)
-    print prediction.shape
     return prediction,cost_per_iteration
 
+"""
+Evaluation metric is "Expected Percentile Rank". Check out above mentioned paper to know more about it.
+"""
 def evaluate(prediction,test):
                 
     numerator = 0
