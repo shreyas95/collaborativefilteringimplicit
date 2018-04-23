@@ -1,7 +1,7 @@
 import numpy
 
 def collaborativeFilteringOnImplicitDataset(utility_matrix,number_of_factors=2,learning_rate = 0.01,regularization=0.01,number_of_iterations=10,confidence_value = 20):
-    
+	
 	users, pods = utility_matrix.shape
     r=number_of_factors                			#number of latent factors
     ita=learning_rate            				#learning rate
