@@ -6,3 +6,6 @@ Stochastic gradient descent is used to minimize the SSE. Regularization is also 
 
 Optimization function: 
 <img src="optimization.png" alt="3 Col Portfolio Preview" style="max-width:100%;">
+
+Reference: 
+Y. Hu, Y. Koren and C. Volinsky, "Collaborative Filtering for Implicit Feedback Datasets," 2008 Eighth IEEE International Conference on Data Mining, Pisa, 2008, pp. 263-272. doi: 10.1109/ICDM.2008.22 URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4781121&isnumber=4781078
