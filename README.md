@@ -1,5 +1,5 @@
 # collaborativefilteringimplicit
-This project conatins collaborative filtering technique to build recommendations from implicit feedback. For implementing this technique we require two major parameters viz. confidence and preference. Confidence is associated with the frequency of actions whereas preference is binary. 
+This project contains collaborative filtering technique to build recommendations from implicit feedback. For implementing this technique we require two major parameters viz. confidence and preference. Confidence is associated with the frequency of actions whereas preference is binary. 
 For example: If a user clicks on any item, the preference is 1, otherwise it is zero. Confidence is directly proportional to the number of times a user clicks the same item. High number clicks means higher confidence value.
 
 Stochastic gradient descent is used to minimize the SSE. Regularization is also added to avoid the overfitting. 
