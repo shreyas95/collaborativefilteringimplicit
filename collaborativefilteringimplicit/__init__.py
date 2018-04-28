@@ -21,15 +21,15 @@ def collaborativeFilteringOnImplicitDataset(utility_matrix,number_of_factors=2,l
     # Initialize latent factor matrice
     P = numpy.random.normal(scale=1.0/r, size=(users, r))
     Q = numpy.random.normal(scale=1.0/r, size=(pods, r))
-    confidence = numpy.zeros((users, pods))
+    confidence = numpy.ones((users, pods))
     preference = numpy.zeros((users, pods))
     
     #create training data    
     training_data = []
     for i in range(users):
         for j in range(pods):
+            training_data.append((i,j))
             if utility_matrix[i][j] > 0:
-                training_data.append((i,j))
                 preference[i][j] = 1.0
                 confidence[i][j] = 1.0 + alpha*utility_matrix[i][j]
     
